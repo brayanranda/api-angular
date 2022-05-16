@@ -1,0 +1,8 @@
+<section class="w-full py-12 bg-neutral-900 text-white">
+    <article class="w-4/5 mx-auto mb-6">
+        <h1 class="text-3xl">Productos</h1>
+    </article>
+    <article class="w-4/5 mx-auto grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <app-product [product]="item" *ngFor="let item of products; index as i"></app-product>
+    </article>
+</section>
