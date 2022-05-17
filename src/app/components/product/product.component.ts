@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
+import SwiperCore from 'swiper';
 
 @Component({
   selector: 'app-product',
@@ -19,10 +20,17 @@ export class ProductComponent implements OnInit {
       name: '',
     }
   };
+  // Enviamos al padre
+  @Output() showDetail = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onShowDetail():void {
+    // Enviamos el id, para saber que producto mostrar
+    this.showDetail.emit(this.product.id)
   }
 
 }

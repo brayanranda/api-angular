@@ -14,4 +14,8 @@ export class ProductService {
   getProblems() {
     return this.http.get<Product[]>(this.url);
   }
+
+  getProblem(id:string) {
+    return this.http.get<Product>(`${this.url}/${id}`);
+  }
 }
